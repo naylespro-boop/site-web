@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#171322">
+<title>CraftToFame — 30 jours pour lancer ta chaîne Minecraft</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+:root{--bg:#f0eee7;--panel:#faf9f4;--panel2:#e7e3d8;--text:#24251f;--muted:#686a60;--orange:#d44a25;--purple:#5b6142;--green:#557a55;--line:#d0cdbf;--ink:#24251f;--paper:#f0eee7}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:86px}body{margin:0;background:var(--bg);color:var(--text);font-family:'Space Grotesk',ui-sans-serif,system-ui,sans-serif;line-height:1.62;background-image:radial-gradient(#bcb8a9 0.6px,transparent .6px);background-size:17px 17px}
+a{color:var(--purple)}button,input,select{font:inherit}.wrap{width:min(1160px,91%);margin:auto}.nav{position:sticky;top:0;z-index:10;background:rgba(240,238,231,.96);border-bottom:1px solid var(--ink)}.navin{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:13px 0}.logo{font-weight:700;letter-spacing:-.06em;font-size:1.22rem}.logo span{color:var(--orange)}.navlinks{display:flex;gap:22px;flex-wrap:wrap}.navlinks a{text-decoration:none;color:var(--muted);font-size:.86rem;font-weight:600}.navlinks a:hover{color:var(--orange)}.nav .btn{font-size:.83rem}
+.hero{padding:76px 0 48px;position:relative}.hero:after{content:'30';position:absolute;right:2%;top:55px;font-size:clamp(9rem,24vw,20rem);font-weight:700;line-height:1;letter-spacing:-.12em;color:rgba(36,37,31,.045);pointer-events:none}.eyebrow{color:var(--orange);font-family:'DM Mono',monospace;font-weight:500;letter-spacing:.12em;text-transform:uppercase;font-size:.76rem}.hero h1{font-size:clamp(2.8rem,7.5vw,6.4rem);line-height:.94;letter-spacing:-.075em;max-width:890px;margin:20px 0;position:relative;z-index:1}.hero h1 span{color:var(--orange);font-style:italic}.hero p{font-size:1.1rem;color:var(--muted);max-width:650px}.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:27px}.btn{border:1px solid transparent;border-radius:3px;padding:12px 17px;font-weight:700;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:8px;transition:transform .18s ease,background .18s ease}.btn:hover{transform:translateY(-2px)}.primary{background:var(--orange);color:#fffaf2}.primary:hover{background:#b93d1d}.secondary{background:transparent;border:1px solid var(--ink);color:var(--text)}.secondary:hover{background:var(--panel2)}.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:48px;border-top:1px solid var(--ink);border-bottom:1px solid var(--ink)}.stat,.card{background:var(--panel);border:0;border-right:1px solid var(--line);border-radius:0;padding:21px}.stat:last-child{border-right:0}.stat strong{display:block;font-size:2rem;letter-spacing:-.07em}.stat span{font-size:.82rem;color:var(--muted)}
+section{padding:55px 0;border-top:1px solid var(--line)}.sectionhead{display:flex;justify-content:space-between;align-items:end;gap:20px;margin-bottom:24px}.sectionhead h2{font-size:clamp(1.85rem,4.2vw,3rem);letter-spacing:-.065em;margin:0;max-width:550px;line-height:1.05}.sectionhead p{color:var(--muted);max-width:500px;margin:0;font-size:.95rem}.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}.card h3{margin:8px 0;letter-spacing:-.03em}.card p{color:var(--muted);margin:.35rem 0}.icon{font-size:1.55rem}.tag{display:inline-block;font-family:'DM Mono',monospace;font-size:.7rem;font-weight:500;letter-spacing:.01em;padding:4px 8px;border-radius:2px;background:#f3d9ca;color:#9c3419}.tag.purple{background:#e2e3d7;color:#454b32}.tag.green{background:#dce8d9;color:#315a35}
+.timeline{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.phase{border-top:3px solid var(--orange);padding:18px 15px;background:var(--panel);border-radius:0;border-right:1px solid var(--line);border-bottom:1px solid var(--line);border-left:1px solid var(--line)}.phase:nth-child(2){border-top-color:var(--purple)}.phase:nth-child(3){border-top-color:#8c9e9e}.phase:nth-child(4){border-top-color:var(--green)}.phase h3{margin:10px 0;letter-spacing:-.04em}.phase p{color:var(--muted);font-size:.92rem}
+.progressbox{padding:18px 0;border-top:1px solid var(--ink);border-bottom:1px solid var(--ink);background:transparent;border-radius:0;margin-bottom:16px}.progressrow{display:flex;justify-content:space-between;gap:12px;align-items:center}.track{height:5px;background:#d8d4c8;border-radius:0;overflow:hidden;margin-top:12px}.bar{height:100%;width:0;background:var(--orange);transition:width .2s}
+.filters{display:flex;gap:10px;flex-wrap:wrap;margin:15px 0}.filters input,.filters select{background:var(--panel);color:var(--text);border:1px solid var(--line);padding:10px 12px;border-radius:2px}.filters input{flex:1;min-width:200px}.calendar{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.day{display:flex;gap:13px;align-items:flex-start;padding:15px 12px;border:0;border-bottom:1px solid var(--line);border-radius:0;background:rgba(250,249,244,.82);transition:background .2s}.day:hover{background:#fffdf7}.day.done{opacity:.55}.day.done .task{text-decoration:line-through}.day input{accent-color:var(--orange);margin-top:5px;width:18px;height:18px;flex-shrink:0}.date{font-size:.75rem;color:var(--orange);font-weight:900;text-transform:uppercase}.task{font-weight:750}.meta{color:var(--muted);font-size:.83rem;margin-top:3px}.day.hidden{display:none}
+.recipe{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid var(--ink);border-bottom:1px solid var(--ink)}.step{padding:20px 16px;background:transparent;border:0;border-right:1px solid var(--line);border-radius:0}.step:last-child{border-right:0}.step strong{color:var(--orange);font-family:'DM Mono',monospace;font-size:.9rem}.step h3{margin:8px 0;letter-spacing:-.04em}.step p{color:var(--muted);font-size:.92rem}
+.ideas{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.idea{background:var(--panel);border:1px solid var(--line);border-radius:0;overflow:hidden}.idea .visual{height:125px;background:#e1d9c8;display:grid;place-items:center;font-size:3rem;border-bottom:1px solid var(--line);position:relative}.idea .visual:after{content:'CRAFT / FIELD NOTES';position:absolute;right:10px;bottom:7px;font:10px 'DM Mono',monospace;letter-spacing:.1em;color:#686a60}.idea .content{padding:18px}.idea h3{margin:0 0 8px}.idea ul{padding-left:18px;color:var(--muted);font-size:.92rem}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:14px}.checklist{list-style:none;padding:0;margin:0}.checklist li{padding:10px 0;border-bottom:1px solid var(--line);display:flex;gap:10px}.checklist li:last-child{border:0}.checklist input{accent-color:var(--green);margin-top:6px}.metric{padding:13px 0;background:transparent;border-bottom:1px solid var(--line);border-radius:0;margin:0}.metric b{display:block}.metric span{color:var(--muted);font-size:.9rem}
+.callout{border:1px solid var(--orange);border-left:5px solid var(--orange);background:#f7e9df;padding:22px 24px;border-radius:0}.callout h3{margin-top:0}.callout p{color:#55564e}
+footer{border-top:1px solid var(--ink);padding:30px 0;color:var(--muted);font-size:.88rem;margin-top:30px;font-family:'DM Mono',monospace}
+@media(max-width:800px){.stats{grid-template-columns:repeat(2,1fr)}.stat:nth-child(2){border-right:0}.stat:nth-child(-n+2){border-bottom:1px solid var(--line)}.timeline,.recipe{grid-template-columns:repeat(2,1fr)}.grid3,.ideas{grid-template-columns:1fr}.grid3{gap:0}.grid3 .card{border-right:0;border-bottom:1px solid var(--line)}.two{grid-template-columns:1fr}.navlinks{display:none}.hero{padding-top:48px}.hero:after{right:0;top:80px}}@media(max-width:520px){.calendar{grid-template-columns:1fr}.timeline,.recipe{grid-template-columns:1fr}.phase{padding:15px}.step{border-right:0;border-bottom:1px solid var(--line)}.step:last-child{border-bottom:0}.stat,.card{padding:16px}.sectionhead{display:block}.sectionhead p{margin-top:10px}.hero h1{font-size:clamp(2.7rem,15vw,4.5rem)}footer span{float:none!important;display:block;margin-top:8px}} 
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important;animation:none!important}}
+
+/* Editorial details: restrained labels, sharp geometry, clear keyboard focus. */
+:focus-visible{outline:3px solid var(--orange);outline-offset:3px}
+::selection{background:var(--orange);color:white}
+section .sectionhead h2:before{content:'↳ ';font-family:'DM Mono',monospace;font-size:.62em;color:var(--orange);vertical-align:middle}
+input[type=checkbox]{accent-color:var(--orange)}
+@media print{.nav,.actions,.filters,.btn{display:none!important}body{background:white}.day.hidden{display:flex!important}section{break-inside:avoid}.hero:after{display:none}}
+</style>
+</head>
+<body>
+<header class="nav"><div class="wrap navin"><div class="logo">🎃 Craft<span>ToFame</span></div><nav class="navlinks"><a href="#strategie">Stratégie</a><a href="#planning">Planning</a><a href="#shorts">Shorts</a><a href="#analyse">Statistiques</a></nav><a class="btn secondary" href="#planning">Commencer →</a></div></header>
+<main>
+<div class="wrap hero">
+  <div class="eyebrow">Plan d'action · 25 oct. — 23 nov. 2026</div>
+  <h1>30 jours pour faire grandir ta chaîne <span>Minecraft.</span></h1>
+  <p>Un programme concret pour profiter d'Halloween, publier régulièrement et trouver les formats que ton audience aime. Coche tes missions, suis ta progression et ajuste selon tes statistiques.</p>
+  <div class="actions"><a class="btn primary" href="#planning">Voir mes 30 missions ↓</a><a class="btn secondary" href="#strategie">Découvrir la stratégie</a></div>
+  <div class="stats"><div class="stat"><strong>30</strong><span>idées de Shorts / vidéos</span></div><div class="stat"><strong>6–8</strong><span>vidéos longues visées</span></div><div class="stat"><strong>1/jour</strong><span>rythme de publication conseillé</span></div><div class="stat"><strong>4</strong><span>semaines de progression</span></div></div>
+</div>
+<section id="strategie"><div class="wrap">
+  <div class="sectionhead"><h2>La stratégie en 4 phases</h2><p>Halloween sert d'accroche saisonnière. Ensuite, on garde les concepts de défi, de survie et de construction qui peuvent fonctionner toute l'année.</p></div>
+  <div class="timeline">
+    <article class="phase"><span class="tag">25 oct. – 1 nov.</span><h3>🎃 1. Rush Halloween</h3><p>Maison hantée, village maudit, survie effrayante, citrouilles et mobs. Publie les idées les plus saisonnières avant le 31 octobre.</p></article>
+    <article class="phase"><span class="tag purple">2 – 8 nov.</span><h3>🧭 2. Créer une série</h3><p>Teste Hardcore, pièges et bases secrètes. Donne aux spectateurs une raison de revenir pour la prochaine vidéo.</p></article>
+    <article class="phase"><span class="tag">9 – 15 nov.</span><h3>📈 3. Doubler ce qui marche</h3><p>Compare les résultats. Reprends les mécaniques qui retiennent les gens, mais avec une nouvelle idée et une meilleure exécution.</p></article>
+    <article class="phase"><span class="tag green">16 – 23 nov.</span><h3>🏆 4. Un gros rendez-vous</h3><p>Prépare un défi plus ambitieux, avec un objectif clair, une progression visible et une fin satisfaisante.</p></article>
+  </div>
+  <div class="grid3" style="margin-top:14px">
+    <article class="card"><div class="icon">⚡</div><h3>Priorité aux premières secondes</h3><p>Commence par l'action ou le résultat. Pas de longue intro ni de logo animé.</p></article>
+    <article class="card"><div class="icon">🎯</div><h3>Une idée par vidéo</h3><p>Le titre, la miniature et le contenu doivent promettre la même chose. Pas de piège à clics.</p></article>
+    <article class="card"><div class="icon">🔁</div><h3>Teste et améliore</h3><p>Une vidéo qui ne marche pas n'est pas un échec : c'est une information sur le hook, le rythme ou le concept.</p></article>
+  </div>
+</div></section>
+<section id="planning"><div class="wrap">
+  <div class="sectionhead"><h2>Ton calendrier des 30 jours</h2><p>Coche chaque mission terminée. La progression est sauvegardée dans ce navigateur sur cet appareil.</p></div>
+  <div class="progressbox"><div class="progressrow"><strong>Progression du challenge</strong><strong id="progressText">0 / 30</strong></div><div class="track"><div class="bar" id="progressBar"></div></div></div>
+  <div class="filters"><input id="search" type="search" placeholder="Rechercher une idée…"><select id="typeFilter"><option value="all">Tous les formats</option><option value="Short">Shorts</option><option value="Vidéo longue">Vidéos longues</option></select><button class="btn secondary" id="reset">Réinitialiser</button></div>
+  <div class="calendar" id="calendar"></div>
+</div></section>
+<section id="shorts"><div class="wrap">
+  <div class="sectionhead"><h2>La formule d'un Short</h2><p>Commence avec 15 à 35 secondes comme point de départ, puis adapte la durée à l'idée et aux statistiques.</p></div>
+  <div class="recipe">
+    <article class="step"><strong>00–02 s</strong><h3>Le hook</h3><p>« J'ai trouvé un endroit que tu ne devrais jamais visiter… » Montre tout de suite le lieu mystérieux.</p></article>
+    <article class="step"><strong>02–15 s</strong><h3>L'action</h3><p>Une progression claire, des coupes utiles, des sous-titres lisibles et aucun temps mort.</p></article>
+    <article class="step"><strong>15–25 s</strong><h3>La révélation</h3><p>Montre le monstre, le piège ou le résultat. La vidéo doit tenir sa promesse.</p></article>
+    <article class="step"><strong>Fin</strong><h3>L'interaction</h3><p>Pose une question simple : « Tu oserais entrer ? » ou « Quel défi demain ? »</p></article>
+  </div>
+  <div class="sectionhead" style="margin-top:35px"><h2>3 vidéos prioritaires</h2><p>À tourner dès que possible, surtout les idées Halloween avant le 31 octobre.</p></div>
+  <div class="ideas">
+    <article class="idea"><div class="visual">🏚️🎃</div><div class="content"><h3>J'ai construit une maison hantée</h3><span class="tag">Avant le 31 octobre</span><ul><li>Montre la maison terminée dès le début.</li><li>Accélère la construction avec des étapes visibles.</li><li>Termine par une visite nocturne.</li></ul><p><b>Miniature :</b> maison sombre, citrouilles lumineuses, « ELLE EST MAUDITE ? »</p></div></article>
+    <article class="idea"><div class="visual">🌫️👁️</div><div class="content"><h3>Une nuit dans Minecraft terrifiant</h3><ul><li>Montre une menace dès les premières secondes.</li><li>Objectif : survivre jusqu'au matin.</li><li>Termine par un retournement ou une victoire.</li></ul><p><b>Miniature :</b> personnage face à une silhouette dans le brouillard.</p></div></article>
+    <article class="idea"><div class="visual">❤️⛏️</div><div class="content"><h3>Minecraft avec un seul cœur</h3><ul><li>Explique la règle en une phrase.</li><li>Enchaîne les dangers et décisions risquées.</li><li>Fais monter la tension jusqu'au dernier moment.</li></ul><p><b>Miniature :</b> un cœur géant, ton personnage et de la lave.</p></div></article>
+  </div>
+</div></section>
+<section id="routine"><div class="wrap">
+  <div class="sectionhead"><h2>Routine de production</h2><p>Environ 1 h 30 à 2 h par jour. Si tu as moins de temps, privilégie une vidéo propre plutôt que de bâcler le reste.</p></div>
+  <div class="two">
+    <div class="card"><h3>⏱️ Une session type</h3><div class="metric"><b>15 min — idée et accroche</b><span>Écris le titre provisoire et la première phrase avant d'enregistrer.</span></div><div class="metric"><b>35–50 min — capture</b><span>Enregistre plusieurs scènes pendant une même session.</span></div><div class="metric"><b>30–40 min — montage</b><span>Coupe les temps morts, règle le son, ajoute des sous-titres si utiles.</span></div><div class="metric"><b>20 min — publication et bilan</b><span>Réponds aux commentaires et consulte les performances récentes.</span></div></div>
+    <div class="card"><h3>✅ Checklist avant publication</h3><ul class="checklist"><li><input type="checkbox"><span>Les 2 premières secondes donnent envie de rester.</span></li><li><input type="checkbox"><span>Le titre promet une seule chose claire.</span></li><li><input type="checkbox"><span>Le son de la voix et du jeu est équilibré.</span></li><li><input type="checkbox"><span>La miniature reste lisible sur téléphone.</span></li><li><input type="checkbox"><span>J'ai vérifié les droits de la musique et des éléments utilisés.</span></li><li><input type="checkbox"><span>J'ai prévu une question simple pour les commentaires.</span></li></ul></div>
+  </div>
+</div></section>
+<section id="analyse"><div class="wrap">
+  <div class="sectionhead"><h2>Lire tes statistiques</h2><p>Dans YouTube Studio, compare les vidéos entre elles et cherche des tendances. Une seule vidéo ne suffit pas pour tirer une conclusion.</p></div>
+  <div class="grid3">
+    <article class="card"><div class="icon">👀</div><h3>Les Shorts</h3><p>Regarde les vues engagées, le pourcentage qui reste au lieu de passer, la durée moyenne et les abonnés gagnés.</p></article>
+    <article class="card"><div class="icon">🖼️</div><h3>Les vidéos longues</h3><p>Regarde les impressions, le taux de clics, la durée moyenne de visionnage et les moments où les gens quittent la vidéo.</p></article>
+    <article class="card"><div class="icon">🧠</div><h3>Décision hebdomadaire</h3><p>Choisis tes 3 meilleures vidéos, identifie ce qu'elles ont en commun et teste une nouvelle variation la semaine suivante.</p></article>
+  </div>
+  <div class="callout" style="margin-top:14px"><h3>Règle de diagnostic rapide</h3><p><b>Les gens passent le Short :</b> teste un hook visuel plus fort. <b>Ils restent mais ne regardent pas longtemps :</b> accélère la progression et livre la promesse plus tôt. <b>Une vidéo longue a des impressions mais peu de clics :</b> revois le duo titre + miniature. <b>Les clics sont bons mais les gens quittent vite :</b> améliore l'intro et aligne mieux la vidéo sur sa promesse.</p><p>Ouvre <a href="https://studio.youtube.com/" target="_blank" rel="noopener">YouTube Studio ↗</a> pour consulter tes données.</p></div>
+</div></section>
+<section id="regles"><div class="wrap">
+  <div class="sectionhead"><h2>Les règles pour durer</h2><p>Le but n'est pas de forcer un buzz, mais de découvrir un format que tu peux refaire avec plaisir.</p></div>
+  <div class="two"><div class="card"><h3>À faire</h3><ul><li>Garder un style visuel reconnaissable.</li><li>Créer une série autour des concepts qui fonctionnent.</li><li>Répondre aux commentaires et demander des idées.</li><li>Réutiliser tes propres captures pour créer plusieurs formats.</li></ul></div><div class="card"><h3>À éviter</h3><ul><li>Acheter des vues ou des abonnés.</li><li>Copier exactement le contenu d'autres créateurs.</li><li>Mettre une intro longue avant l'action.</li><li>Promettre un résultat que la vidéo ne montre pas.</li></ul></div></div>
+  <p style="color:var(--muted);font-size:.9rem;margin-top:18px">Objectif réaliste au bout de 30 jours : avoir publié régulièrement, identifié 2–3 formats prometteurs et appris quoi améliorer. Aucune méthode ne peut garantir de percer en un mois.</p>
+</div></section>
+</main>
+<footer><div class="wrap">🎃 CraftToFame · Programme Minecraft Halloween 2026 <span style="float:right">Fais des tests. Apprends. Recommence.</span></div></footer>
+<script>
+const tasks = [
+["25 oct.","Short","J’ai trouvé le seed Minecraft le plus flippant 🎃"],
+["26 oct.","Short","Je construis une maison hantée en 30 secondes"],
+["27 oct.","Vidéo longue","J’ai survécu 100 jours dans un monde Minecraft maudit","8–12 min"],
+["28 oct.","Short","Ne creuse JAMAIS sous cette citrouille…"],
+["29 oct.","Short","Minecraft mais chaque nuit devient plus terrifiante"],
+["30 oct.","Vidéo longue","J’ai 24 heures pour construire une base anti-zombies","8–12 min"],
+["31 oct.","Short","Le jumpscare Minecraft que je n’avais pas vu venir"],
+["1 nov.","Short","Je transforme un village Minecraft en village maudit"],
+["2 nov.","Short","3 idées de pièges Minecraft pour Halloween"],
+["3 nov.","Vidéo longue","J’ai survécu à ma première nuit dans Minecraft Hardcore","8–12 min"],
+["4 nov.","Short","Le piège le plus simple pour troll tes amis"],
+["5 nov.","Short","J’ai construit une porte secrète sous mon lit"],
+["6 nov.","Vidéo longue","Je construis une base secrète que personne ne peut trouver","8–12 min"],
+["7 nov.","Short","Ce détail dans Minecraft est complètement sous-coté"],
+["8 nov.","Short","Minecraft mais je n’ai droit qu’à un seul cœur"],
+["9 nov.","Vidéo longue","Peut-on finir Minecraft sans miner ?","8–12 min"],
+["10 nov.","Short","J’ai trouvé une astuce que personne ne m’avait montrée"],
+["11 nov.","Short","Je transforme une grotte en base de luxe"],
+["12 nov.","Vidéo longue","Je construis la maison de survie parfaite","8–12 min"],
+["13 nov.","Short","Avant/après : cette construction est incroyable"],
+["14 nov.","Short","Le mob Minecraft le plus dangereux dans cette situation"],
+["15 nov.","Vidéo longue","Je tente le défi Minecraft le plus difficile de ma chaîne","8–12 min"],
+["16 nov.","Short","Tu n’as que 10 secondes pour choisir : gauche ou droite"],
+["17 nov.","Short","Je piège un ami avec une base totalement normale"],
+["18 nov.","Vidéo longue","J’ai 1 heure pour construire un château gigantesque","8–12 min"],
+["19 nov.","Short","Cette construction paraît impossible, mais regarde…"],
+["20 nov.","Short","Minecraft mais chaque erreur me coûte un objet"],
+["21 nov.","Vidéo longue","J’ai créé le monde Minecraft le plus dangereux possible","8–12 min"],
+["22 nov.","Short","Les meilleurs moments de mon défi en 20 secondes"],
+["23 nov.","Vidéo longue","30 jours pour lancer ma chaîne Minecraft : voici le résultat","8–12 min"]
+];
+const key='crafttofame-completed-v1';
+let completed=new Set();try{completed=new Set(JSON.parse(localStorage.getItem(key)||'[]'))}catch(e){}
+const cal=document.getElementById('calendar');
+function render(){const q=document.getElementById('search').value.toLowerCase();const f=document.getElementById('typeFilter').value;cal.innerHTML='';tasks.forEach((t,i)=>{const isDone=completed.has(i);const matches=(`${t[0]} ${t[1]} ${t[2]}`).toLowerCase().includes(q)&&(f==='all'||f===t[1]);const el=document.createElement('label');el.className='day'+(isDone?' done':'')+(!matches?' hidden':'');el.innerHTML=`<input type="checkbox" ${isDone?'checked':''} aria-label="Mission terminée"><div><div class="date">Jour ${i+1} · ${t[0]} · ${t[1]}</div><div class="task"></div><div class="meta">${t[3]|| (t[1]==='Short'?'15–35 secondes comme point de départ':'Prévois une vidéo structurée')}</div></div>`;el.querySelector('.task').textContent=t[2];el.querySelector('input').addEventListener('change',e=>{if(e.target.checked)completed.add(i);else completed.delete(i);save();render()});cal.appendChild(el)});document.getElementById('progressText').textContent=`${completed.size} / ${tasks.length}`;document.getElementById('progressBar').style.width=`${completed.size/tasks.length*100}%`}
+function save(){try{localStorage.setItem(key,JSON.stringify([...completed]))}catch(e){}}
+document.getElementById('search').addEventListener('input',render);document.getElementById('typeFilter').addEventListener('change',render);document.getElementById('reset').addEventListener('click',()=>{if(confirm('Réinitialiser les 30 missions cochées ?')){completed.clear();save();render()}});render();
+</script>
+</body>
+</html>
